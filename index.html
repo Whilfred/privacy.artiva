@@ -3,181 +3,690 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Supprimer mon compte — Artiva</title>
+<title>Confidentialité & CGU — Artiva</title>
+<meta name="description" content="Politique de confidentialité et Conditions Générales d'Utilisation d'Artiva." />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  :root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #eef2ff;
+    --text: #111827;
+    --text-subtle: #6b7280;
+    --text-muted: #9ca3af;
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --radius: 12px;
+  }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    background: #f9fafb;
-    color: #111827;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
-    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  .site-header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  .header-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
   }
 
-  .card {
-    background: #fff;
-    border-radius: 16px;
+  /* ---------- ONGLETS ---------- */
+  .tabs-wrapper {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 77px;
+    z-index: 99;
+  }
+  .tabs {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+  }
+  .tab {
+    flex: 1;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-subtle);
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .tab:hover {
+    color: var(--text);
+    background: #fafbfc;
+  }
+  .tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  /* ---------- CONTENU ---------- */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.2s ease-out;
+  }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- En-tête de chaque document ---------- */
+  .doc-header {
+    background: var(--card);
+    border-radius: var(--radius);
     padding: 40px 32px;
-    max-width: 520px;
-    width: 100%;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     text-align: center;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
   }
-
-  .icon {
-    width: 80px;
-    height: 80px;
+  .doc-header-icon {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: #fee2e2;
-    color: #dc2626;
+    background: var(--primary-light);
+    color: var(--primary);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 16px;
   }
-
-  h1 {
-    font-size: 1.6rem;
+  .doc-header h1 {
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    color: #6b7280;
-    font-size: 1rem;
-    margin-bottom: 24px;
-  }
-
-  .info-box {
-    background: #fef2f2;
-    border-left: 4px solid #dc2626;
-    padding: 16px 20px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    text-align: left;
-  }
-
-  .info-box h2 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #991b1b;
     margin-bottom: 8px;
   }
-
-  .info-box ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .info-box li {
-    font-size: 0.92rem;
-    color: #7f1d1d;
-    margin-bottom: 4px;
-  }
-
-  .info-box li:last-child { margin-bottom: 0; }
-
-  .btn-primary {
-    display: inline-block;
-    background: #dc2626;
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background 0.15s;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .btn-primary:hover {
-    background: #b91c1c;
-  }
-
-  .btn-secondary {
-    display: inline-block;
-    color: #6b7280;
-    text-decoration: none;
-    padding: 12px 24px;
-    font-weight: 500;
-    font-size: 0.92rem;
-    margin-top: 12px;
-  }
-
-  .btn-secondary:hover {
-    color: #111827;
-    text-decoration: underline;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 24px 0;
-  }
-
-  .contact {
-    color: #6b7280;
+  .doc-header-subtitle {
+    color: var(--text-subtle);
     font-size: 0.9rem;
   }
 
-  .contact a {
-    color: #6366f1;
-    text-decoration: none;
-    font-weight: 600;
+  /* ---------- Sections ---------- */
+  .section {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+  }
+  .section h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .section h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 16px 0 6px;
+    color: var(--text);
+  }
+  .section p {
+    font-size: 0.95rem;
+    color: var(--text-subtle);
+    margin-bottom: 8px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+  .section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .section li {
+    font-size: 0.95rem;
+    color: var(--text-subtle);
+    line-height: 1.7;
+    padding-left: 4px;
+    margin-bottom: 4px;
+  }
+  .section strong {
+    color: var(--text);
+    font-weight: 700;
   }
 
-  .contact a:hover { text-decoration: underline; }
+  /* ---------- Encadré note ---------- */
+  .note-box {
+    background: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 12px 0;
+  }
+  .note-box p {
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  .note-box p:last-child { margin-bottom: 0; }
+
+  /* ---------- Contact ---------- */
+  .contact-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .contact-link:hover { text-decoration: underline; }
+
+  /* ---------- Bouton suppression ---------- */
+  .danger-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    transition: background 0.15s;
+  }
+  .danger-btn:hover { background: var(--primary-dark); }
+
+  /* ---------- Footer ---------- */
+  .doc-footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 700px) {
+    .container { padding: 20px 16px 60px; }
+    .doc-header { padding: 28px 20px; }
+    .doc-header h1 { font-size: 1.4rem; }
+    .section { padding: 20px; }
+    .tab { padding: 14px 10px; font-size: 0.88rem; }
+    .site-header-inner { padding: 0 16px; }
+    .tabs { padding: 0 16px; }
+    .header-meta { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="icon">🗑️</div>
+<!-- ============================================================ -->
+<!-- HEADER                                                       -->
+<!-- ============================================================ -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="brand">
+      <div class="brand-logo">A</div>
+      <span>Artiva</span>
+    </a>
+    <span class="header-meta">Dernière mise à jour : 29 septembre 2026</span>
+  </div>
+</header>
 
-  <h1>Supprimer mon compte</h1>
-  <p class="subtitle">
-    Vous êtes sur le point de demander la suppression de votre compte Artiva et de toutes vos données associées.
-  </p>
+<!-- ============================================================ -->
+<!-- ONGLETS                                                      -->
+<!-- ============================================================ -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab active" data-tab="privacy">🛡️ Confidentialité</button>
+    <button class="tab" data-tab="terms">📋 CGU</button>
+  </div>
+</div>
 
-  <div class="info-box">
-    <h2>⚠️ Ce qui va se passer</h2>
-    <ul>
-      <li>• Votre compte sera <strong>désactivé immédiatement</strong></li>
-      <li>• Vos données personnelles seront <strong>anonymisées sous 30 jours</strong></li>
-      <li>• Vos commandes passées seront <strong>conservées de manière anonyme</strong> (obligations légales)</li>
-      <li>• Cette action est <strong>irréversible</strong></li>
-    </ul>
+<!-- ============================================================ -->
+<!-- CONTENU                                                      -->
+<!-- ============================================================ -->
+<main class="container">
+
+  <!-- ---------- ONGLET CONFIDENTIALITÉ ---------- -->
+  <div id="privacy" class="tab-content active">
+    <div class="doc-header">
+      <div class="doc-header-icon">🛡️</div>
+      <h1>Politique de confidentialité</h1>
+      <p class="doc-header-subtitle">Dernière mise à jour : 29 septembre 2026</p>
+    </div>
+
+    <div class="section">
+      <h2>1. Introduction</h2>
+      <p>Bienvenue sur Artiva. Nous accordons une importance capitale à la protection de votre vie privée et de vos données personnelles.</p>
+      <p>Cette politique vous informe sur les données que nous collectons, comment nous les utilisons, combien de temps nous les conservons et vos droits.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Qui sommes-nous ?</h2>
+      <p>Artiva est une plateforme de vente en ligne permettant de commander des produits artisanaux et de se les faire livrer au Bénin, au Burkina Faso et en Côte d'Ivoire.</p>
+      <p><strong>Contact :</strong> artiva.app@gmail.com</p>
+    </div>
+
+    <div class="section">
+      <h2>3. Données que nous collectons</h2>
+      <p>Nous ne collectons que les informations strictement nécessaires au bon fonctionnement de l'application.</p>
+
+      <h3>a) Données d'identification</h3>
+      <ul>
+        <li>• Nom et prénom</li>
+        <li>• Adresse email</li>
+        <li>• Numéro de téléphone</li>
+      </ul>
+
+      <h3>b) Données de livraison</h3>
+      <ul>
+        <li>• Adresse complète (rue, ville, pays)</li>
+      </ul>
+
+      <h3>c) Données de commande</h3>
+      <ul>
+        <li>• Produits commandés et montants</li>
+        <li>• Historique des commandes</li>
+      </ul>
+
+      <h3>d) Données d'utilisation</h3>
+      <ul>
+        <li>• Préférences de navigation</li>
+        <li>• Appareil utilisé (type, système)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Accès à la galerie photo</h2>
+      <p>L'application peut demander l'accès à votre galerie uniquement pour :</p>
+      <ul>
+        <li>• Enregistrer les QR codes générés par vos commandes</li>
+        <li>• Sauvegarder certains éléments visuels de l'application</li>
+      </ul>
+      <p>Nous n'accédons jamais à vos photos personnelles sans votre consentement explicite.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Utilisation de vos données</h2>
+      <ul>
+        <li>• <strong>Gestion des commandes :</strong> traiter, préparer et livrer vos achats</li>
+        <li>• <strong>Compte client :</strong> gérer votre compte et sécuriser vos connexions</li>
+        <li>• <strong>Communication :</strong> vous informer du statut de vos commandes</li>
+        <li>• <strong>Amélioration du service :</strong> comprendre l'usage et améliorer l'app</li>
+        <li>• <strong>Marketing :</strong> vous envoyer des offres (avec possibilité de refus)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Cookies et technologies similaires</h2>
+      <p>Nous n'utilisons <strong>aucun cookie publicitaire</strong> ni de <strong>pistage tiers</strong>.</p>
+      <p>Les seules données conservées <strong>localement sur votre appareil</strong> sont :</p>
+      <ul>
+        <li>• Votre token de connexion (pour rester connecté)</li>
+        <li>• Vos préférences d'affichage (thème clair/sombre)</li>
+      </ul>
+      <p>Vos <strong>paniers</strong> et <strong>wishlists</strong> sont stockés de manière sécurisée dans <strong>notre base de données</strong>, et non sur votre appareil.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Partage de vos données</h2>
+      <p>Nous ne vendons <strong>jamais</strong> vos données personnelles.</p>
+      <p>Nous les partageons uniquement dans les cas suivants :</p>
+      <ul>
+        <li>• Prestataires de livraison (nom, adresse, téléphone)</li>
+        <li>• Prestataires techniques (hébergement, emails, push)</li>
+        <li>• Obligations légales (si la loi l'exige)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>8. Durée de conservation</h2>
+      <ul>
+        <li>• Compte actif : tant que le compte existe</li>
+        <li>• Historique commandes : 5 ans (obligations comptables)</li>
+        <li>• Compte inactif : suppression après 3 ans</li>
+        <li>• Après suppression : anonymisation immédiate</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>9. Sécurité de vos données</h2>
+      <ul>
+        <li>🔒 Chiffrement des mots de passe</li>
+        <li>🔒 Connexion sécurisée (HTTPS / SSL)</li>
+        <li>🔒 Authentification à deux facteurs (code email)</li>
+        <li>🔒 Accès restreint aux administrateurs</li>
+        <li>🔒 Sauvegardes régulières</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>10. Vos droits</h2>
+      <ul>
+        <li>✅ <strong>Droit d'accès</strong> — Consulter vos données</li>
+        <li>✅ <strong>Droit de rectification</strong> — Corriger vos données</li>
+        <li>✅ <strong>Droit à l'effacement</strong> — Supprimer votre compte</li>
+        <li>✅ <strong>Droit d'opposition</strong> — Refuser le marketing</li>
+        <li>✅ <strong>Droit à la portabilité</strong> — Recevoir vos données</li>
+      </ul>
+      <p>Pour exercer ces droits : artiva.app@gmail.com</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Paiements et commandes</h2>
+      <h3>a) Paiement à la livraison (COD)</h3>
+      <div class="note-box">
+        <p>Les commandes jusqu'à <strong>15 000 FCFA</strong> peuvent être payées à la livraison.</p>
+        <p>Pour toute commande supérieure à 15 000 FCFA, seul le <strong>surplus au-delà de 15 000 FCFA</strong> doit être payé à l'avance avant la livraison.</p>
+      </div>
+      <p>En cas de commandes répétées non payées ou non retirées de la part d'un même client, Artiva se réserve le droit d'exiger un paiement intégral obligatoire à l'avance pour toute commande future de ce client.</p>
+    </div>
+
+    <div class="section">
+      <h2>12. Contact et suppression de compte</h2>
+      <p>Pour toute question concernant cette politique :</p>
+      <p><a class="contact-link" href="mailto:artiva.app@gmail.com">📧 artiva.app@gmail.com</a></p>
+      <p style="margin-top: 16px;">Pour demander la suppression de votre compte et de vos données :</p>
+      <a class="danger-btn" href="./supprimer-compte.html">🗑️ Supprimer mon compte</a>
+    </div>
+
+    <div class="doc-footer">© 2026 Artiva — Dernière mise à jour : 29 septembre 2026</div>
   </div>
 
-  <p style="font-size: 0.95rem; color: #6b7280; margin-bottom: 20px;">
-    Pour confirmer votre demande, cliquez sur le bouton ci-dessous. Un email de confirmation vous sera envoyé.
-  </p>
+  <!-- ---------- ONGLET CGU ---------- -->
+  <div id="terms" class="tab-content">
+    <div class="doc-header">
+      <div class="doc-header-icon">📋</div>
+      <h1>Conditions Générales d'Utilisation</h1>
+      <p class="doc-header-subtitle">Dernière mise à jour : 29 septembre 2026</p>
+    </div>
 
-  <a
-    class="btn-primary"
-    href="mailto:artiva.app@gmail.com?subject=Demande%20de%20suppression%20de%20compte&body=Bonjour%2C%0A%0AJe%20souhaite%20supprimer%20mon%20compte%20Artiva.%0A%0AEmail%20associ%C3%A9%20%3A%20%5Bvotre%20email%5D%0ANom%20%3A%20%5Bvotre%20nom%5D%0A%0AMerci."
-  >
-    🗑️ Demander la suppression
-  </a>
+    <div class="section">
+      <h2>1. Objet</h2>
+      <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de l'application Artiva et des services associés.</p>
+      <p>En créant un compte ou en utilisant Artiva, vous acceptez sans réserve les présentes CGU.</p>
+    </div>
 
-  <a class="btn-secondary" href="./legal.html">← Retour aux informations légales</a>
+    <div class="section">
+      <h2>2. Accès au service</h2>
+      <h3>a) Conditions d'accès</h3>
+      <ul>
+        <li>• Avoir au moins 18 ans (ou autorisation parentale)</li>
+        <li>• Disposer d'un appareil compatible</li>
+        <li>• Avoir une connexion Internet</li>
+      </ul>
 
-  <hr class="divider" />
+      <h3>b) Création de compte</h3>
+      <ul>
+        <li>• Informations exactes et à jour</li>
+        <li>• Un seul compte par personne</li>
+        <li>• Interdiction de créer un compte au nom d'un tiers</li>
+      </ul>
 
-  <p class="contact">
-    Une question ? Contactez-nous à
-    <a href="mailto:artiva.app@gmail.com">artiva.app@gmail.com</a>
-  </p>
-</div>
+      <h3>c) Sécurité</h3>
+      <ul>
+        <li>• Vous êtes responsable de vos identifiants</li>
+        <li>• Toute activité sur votre compte vous est imputable</li>
+        <li>• En cas de perte de mot de passe, utilisez le bouton « Mot de passe oublié » dans l'application</li>
+        <li>• Pour toute difficulté, contactez : artiva.app@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Commandes</h2>
+      <h3>a) Passation de commande</h3>
+      <ul>
+        <li>• La commande est ferme et définitive après validation</li>
+        <li>• Un email de confirmation vous est envoyé</li>
+        <li>• Artiva se réserve le droit de refuser une commande</li>
+      </ul>
+
+      <h3>b) Disponibilité</h3>
+      <ul>
+        <li>• Les produits sont proposés dans la limite des stocks disponibles</li>
+        <li>• En cas de rupture, remboursement ou avoir vous sera proposé</li>
+      </ul>
+
+      <h3>c) Prix</h3>
+      <ul>
+        <li>• Les prix sont indiqués en FCFA (XOF)</li>
+        <li>• Le prix applicable est celui affiché au moment de la commande</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Paiement</h2>
+      <h3>a) Modes de paiement acceptés</h3>
+      <ul>
+        <li>• Paiement à la livraison (COD) dans la limite de 15 000 FCFA</li>
+        <li>• Paiement en ligne (Mobile Money / carte bancaire)</li>
+      </ul>
+
+      <h3>b) Commandes importantes</h3>
+      <ul>
+        <li>• Au-delà de 15 000 FCFA : acompte obligatoire du surplus</li>
+        <li>• En cas de non-paiement répété : paiement intégral exigé</li>
+      </ul>
+
+      <h3>c) Sécurité</h3>
+      <ul>
+        <li>• Artiva ne stocke jamais vos informations bancaires</li>
+        <li>• Toutes les transactions sont chiffrées</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. Livraison</h2>
+      <h3>a) Zones desservies</h3>
+      <ul>
+        <li>• Bénin (Sud et Nord)</li>
+        <li>• Burkina Faso</li>
+        <li>• Côte d'Ivoire</li>
+      </ul>
+
+      <h3>b) Délais</h3>
+      <ul>
+        <li>• Les délais sont indicatifs et varient selon la zone</li>
+      </ul>
+
+      <h3>c) Frais de livraison</h3>
+      <ul>
+        <li>• Les frais sont calculés selon la zone de destination</li>
+        <li>• Livraison gratuite dès 100 000 FCFA d'achats cumulés sur 7 jours</li>
+      </ul>
+
+      <h3>d) Réception de la commande</h3>
+      <ul>
+        <li>• Vérifiez le contenu à la livraison</li>
+        <li>• Toute anomalie doit être signalée immédiatement au livreur</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Retours et remboursements</h2>
+      <h3>a) Droit de rétractation</h3>
+      <ul>
+        <li>• Vous disposez de 7 jours après réception pour signaler un problème</li>
+        <li>• Le produit doit être non utilisé et dans son emballage d'origine</li>
+      </ul>
+
+      <h3>b) Produits non retournables</h3>
+      <ul>
+        <li>• Produits périssables</li>
+        <li>• Produits personnalisés</li>
+        <li>• Produits d'hygiène ouverts</li>
+      </ul>
+
+      <h3>c) Remboursement</h3>
+      <ul>
+        <li>• Effectué sous 14 jours après validation du retour</li>
+        <li>• Par le même moyen de paiement utilisé</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Comportement de l'utilisateur</h2>
+      <p>Vous vous engagez à :</p>
+      <ul>
+        <li>✅ Ne pas utiliser Artiva à des fins illégales</li>
+        <li>✅ Ne pas porter atteinte aux autres utilisateurs</li>
+        <li>✅ Ne pas pirater ou perturber le service</li>
+        <li>✅ Ne pas publier de faux avis</li>
+        <li>✅ Fournir des informations exactes</li>
+      </ul>
+      <h3>Sont strictement interdits :</h3>
+      <ul>
+        <li>❌ Fausses commandes répétées</li>
+        <li>❌ Usurpation d'identité</li>
+        <li>❌ Spam ou publicité non autorisée</li>
+        <li>❌ Extraction massive de données (scraping)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>8. Responsabilité d'Artiva</h2>
+      <h3>a) Ce qu'Artiva garantit</h3>
+      <ul>
+        <li>• Fournir un service fonctionnel et sécurisé</li>
+        <li>• Protéger vos données personnelles</li>
+        <li>• Traiter vos commandes avec sérieux</li>
+      </ul>
+
+      <h3>b) Ce qu'Artiva ne garantit pas</h3>
+      <ul>
+        <li>• L'absence totale d'interruption (maintenance, panne)</li>
+        <li>• La disponibilité permanente des produits (rupture possible)</li>
+      </ul>
+
+      <h3>c) Limitation de responsabilité</h3>
+      <p>La responsabilité d'Artiva ne saurait être engagée pour :</p>
+      <ul>
+        <li>• Les dommages indirects</li>
+        <li>• Les pertes de données liées à un cas de force majeure</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>9. Suspension et résiliation</h2>
+      <h3>a) Par Artiva</h3>
+      <p>Artiva peut suspendre ou supprimer un compte sans préavis en cas de :</p>
+      <ul>
+        <li>• Violation grave des CGU</li>
+        <li>• Comportement frauduleux</li>
+        <li>• Commandes non payées répétées</li>
+      </ul>
+
+      <h3>b) Par l'utilisateur</h3>
+      <p>Vous pouvez supprimer votre compte à tout moment via :</p>
+      <ul>
+        <li>• L'application (bouton « Supprimer mon compte »)</li>
+        <li>• <a href="./supprimer-compte.html" style="color: var(--primary);">Page dédiée sur le web</a></li>
+        <li>• Email à artiva.app@gmail.com</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>10. Propriété intellectuelle</h2>
+      <p>Tous les contenus d'Artiva (logo, textes, images, code) sont protégés par le droit d'auteur. Toute reproduction sans autorisation écrite est interdite.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Modifications des CGU</h2>
+      <p>Artiva se réserve le droit de modifier les CGU à tout moment. Les utilisateurs seront informés par notification dans l'application ou par email.</p>
+      <p>L'utilisation continue d'Artiva après modification vaut acceptation des nouvelles CGU.</p>
+    </div>
+
+    <div class="section">
+      <h2>12. Droit applicable</h2>
+      <p>Les présentes CGU sont régies par le droit béninois.</p>
+      <p>Tout litige sera soumis aux tribunaux compétents de Cotonou, Bénin.</p>
+    </div>
+
+    <div class="section">
+      <h2>13. Contact</h2>
+      <p>Pour toute question :</p>
+      <p><a class="contact-link" href="mailto:artiva.app@gmail.com">📧 artiva.app@gmail.com</a></p>
+    </div>
+
+    <div class="doc-footer">© 2026 Artiva — Dernière mise à jour : 29 septembre 2026</div>
+  </div>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- SCRIPT ONGLETS                                               -->
+<!-- ============================================================ -->
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      tabs.forEach((t) => t.classList.remove('active'));
+      contents.forEach((c) => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+
+      // Met à jour l'URL sans recharger (#privacy ou #terms)
+      history.replaceState(null, '', '#' + target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Ouvre l'onglet depuis l'URL (#terms par exemple)
+  if (window.location.hash) {
+    const hash = window.location.hash.substring(1);
+    const targetTab = document.querySelector(`.tab[data-tab="${hash}"]`);
+    if (targetTab) targetTab.click();
+  }
+</script>
 
 </body>
 </html>
