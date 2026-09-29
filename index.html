@@ -19,6 +19,8 @@
     --card: #ffffff;
     --border: #e5e7eb;
     --radius: 12px;
+    --danger: #dc2626;
+    --danger-dark: #b91c1c;
   }
 
   body {
@@ -227,7 +229,7 @@
   /* ---------- Bouton suppression ---------- */
   .danger-btn {
     display: inline-block;
-    background: var(--primary);
+    background: var(--danger);
     color: #fff;
     text-decoration: none;
     padding: 12px 24px;
@@ -237,7 +239,7 @@
     margin-top: 12px;
     transition: background 0.15s;
   }
-  .danger-btn:hover { background: var(--primary-dark); }
+  .danger-btn:hover { background: var(--danger-dark); }
 
   /* ---------- Footer ---------- */
   .doc-footer {
@@ -268,7 +270,7 @@
 <!-- ============================================================ -->
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="/" class="brand">
+    <a href="./" class="brand">
       <div class="brand-logo">A</div>
       <span>Artiva</span>
     </a>
@@ -307,7 +309,7 @@
 
     <div class="section">
       <h2>2. Qui sommes-nous ?</h2>
-      <p>Artiva est une plateforme de vente en ligne permettant de commander des produits artisanaux et de se les faire livrer au Bénin, au Burkina Faso et en Côte d'Ivoire.</p>
+      <p>Artiva est une plateforme de vente en ligne permettant de commander des produits et de se les faire livrer au Bénin, au Burkina Faso et en Côte d'Ivoire.</p>
       <p><strong>Contact :</strong> artiva.app@gmail.com</p>
     </div>
 
@@ -624,7 +626,7 @@
       <p>Vous pouvez supprimer votre compte à tout moment via :</p>
       <ul>
         <li>• L'application (bouton « Supprimer mon compte »)</li>
-        <li>• <a href="./supprimer-compte.html" style="color: var(--primary);">Page dédiée sur le web</a></li>
+        <li>• <a href="./supprimer-compte.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Page dédiée sur le web</a></li>
         <li>• Email à artiva.app@gmail.com</li>
       </ul>
     </div>
