@@ -1,110 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité - Artiva</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    .note {
-      background-color: #fffbcc;
-      padding: 10px;
-      border-left: 4px solid #f1c40f;
-      margin: 10px 0;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 20px;
-      margin-top: 15px;
-      background-color: #2980b9;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .button:hover {
-      background-color: #1f5f85;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supprimer mon compte — Artiva</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f9fafb;
+    color: #111827;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 32px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    text-align: center;
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .info-box {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .info-box h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #991b1b;
+    margin-bottom: 8px;
+  }
+
+  .info-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-box li {
+    font-size: 0.92rem;
+    color: #7f1d1d;
+    margin-bottom: 4px;
+  }
+
+  .info-box li:last-child { margin-bottom: 0; }
+
+  .btn-primary {
+    display: inline-block;
+    background: #dc2626;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.15s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    background: #b91c1c;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    color: #6b7280;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 0.92rem;
+    margin-top: 12px;
+  }
+
+  .btn-secondary:hover {
+    color: #111827;
+    text-decoration: underline;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 24px 0;
+  }
+
+  .contact {
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+
+  .contact a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-  <h1>Politique de confidentialité - Artiva</h1>
-  <p>Bienvenue sur Artiva. Nous respectons votre vie privée et nous nous engageons à protéger vos informations personnelles. Cette politique explique quelles données nous collectons, comment nous les utilisons et vos droits concernant ces données.</p>
 
-  <h2>1. Collecte des informations</h2>
-  <p>Nous collectons uniquement les informations nécessaires au bon fonctionnement de l’application et à la livraison de vos commandes :</p>
-  <ul>
-    <li>Nom et prénom</li>
-    <li>Adresse de livraison</li>
-    <li>Numéro de téléphone</li>
-    <li>Informations liées à la commande (produits, paiement, livraison)</li>
-  </ul>
+<div class="card">
+  <div class="icon">🗑️</div>
 
-  <h2>2. Utilisation de la galerie</h2>
-  <p>L’application Artiva peut demander l’accès à votre galerie pour :</p>
-  <ul>
-    <li>Enregistrer et stocker les QR codes générés par vos commandes</li>
-    <li>Sauvegarder certains éléments de l’application, si nécessaire</li>
-  </ul>
-  <p>Nous n’utilisons pas la galerie pour autre chose et aucune image n’est collectée sans votre consentement.</p>
+  <h1>Supprimer mon compte</h1>
+  <p class="subtitle">
+    Vous êtes sur le point de demander la suppression de votre compte Artiva et de toutes vos données associées.
+  </p>
 
-  <h2>3. Stockage et sécurité des données</h2>
-  <p>Toutes vos informations sont stockées de manière sécurisée et ne sont accessibles qu’au personnel autorisé. Nous utilisons des mesures de protection standard pour éviter tout accès non autorisé ou perte de données.</p>
-
-  <h2>4. Paiements et commandes</h2>
-  <p>Pour les commandes à la livraison (COD) :</p>
-  <div class="note">
-    Les commandes jusqu’à <strong>30 000 FCFA</strong> peuvent être payées à la livraison. <br>
-    Pour toute commande supérieure à 30 000 FCFA, seul le surplus au-delà de 30 000 FCFA doit être payé à l’avance avant la livraison.
+  <div class="info-box">
+    <h2>⚠️ Ce qui va se passer</h2>
+    <ul>
+      <li>• Votre compte sera <strong>désactivé immédiatement</strong></li>
+      <li>• Vos données personnelles seront <strong>anonymisées sous 30 jours</strong></li>
+      <li>• Vos commandes passées seront <strong>conservées de manière anonyme</strong> (obligations légales)</li>
+      <li>• Cette action est <strong>irréversible</strong></li>
+    </ul>
   </div>
-  <p>En cas de commandes répétées non payées ou non retirées de la part d’un même client, Artiva se réserve le droit d’exiger un paiement intégral obligatoire à l’avance pour toute commande future de ce client.</p>
 
-  <h2>5. Cookies et technologies similaires</h2>
-  <p>Nous n’utilisons pas de cookies pour collecter des informations personnelles sur Artiva. Les données collectées sont uniquement celles nécessaires pour vos commandes et la gestion de l’application.</p>
+  <p style="font-size: 0.95rem; color: #6b7280; margin-bottom: 20px;">
+    Pour confirmer votre demande, cliquez sur le bouton ci-dessous. Un email de confirmation vous sera envoyé.
+  </p>
 
-  <h2>6. Partage des informations</h2>
-  <p>Nous ne partageons vos informations personnelles avec des tiers que :</p>
-  <ul>
-    <li>Pour la livraison de vos commandes (ex: services de transport)</li>
-    <li>Pour se conformer à la loi ou aux exigences légales</li>
-  </ul>
+  <a
+    class="btn-primary"
+    href="mailto:artiva.app@gmail.com?subject=Demande%20de%20suppression%20de%20compte&body=Bonjour%2C%0A%0AJe%20souhaite%20supprimer%20mon%20compte%20Artiva.%0A%0AEmail%20associ%C3%A9%20%3A%20%5Bvotre%20email%5D%0ANom%20%3A%20%5Bvotre%20nom%5D%0A%0AMerci."
+  >
+    🗑️ Demander la suppression
+  </a>
 
-  <h2>7. Vos droits</h2>
-  <p>Vous pouvez :</p>
-  <ul>
-    <li>Consulter vos informations personnelles</li>
-    <li>Demander la correction ou suppression de vos informations</li>
-    <li>Contacter notre support pour toute question relative à vos données</li>
-  </ul>
+  <a class="btn-secondary" href="./legal.html">← Retour aux informations légales</a>
 
-  <h2>8. Contact et suppression de compte</h2>
-  <p>Pour toute question concernant la politique de confidentialité ou vos données personnelles, veuillez nous contacter à : 
+  <hr class="divider" />
+
+  <p class="contact">
+    Une question ? Contactez-nous à
     <a href="mailto:artiva.app@gmail.com">artiva.app@gmail.com</a>
   </p>
-  <p>Pour demander la suppression de votre compte et de vos données associées, cliquez sur le bouton ci-dessous :</p>
-  <a href="./supprimer-compte.html" target="_blank" class="button">Supprimer mon compte</a>
+</div>
 
-  <p>Dernière mise à jour : 3 septembre 2026</p>
 </body>
 </html>
